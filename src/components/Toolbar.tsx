@@ -9,7 +9,8 @@ import {
   Cpu, 
   Terminal,
   FileText,
-  Settings
+  Settings,
+  GitFork
 } from 'lucide-react';
 
 interface ToolbarProps {
@@ -102,13 +103,18 @@ export const Toolbar: React.FC<ToolbarProps> = ({
         </div>
       </div>
 
-      <motion.button
-        className="p-1.5 rounded hover:bg-debugger-border text-debugger-muted transition-colors"
+      <motion.a
+        href="https://github.com/nipv20s/template-debugger-style-portfolio"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="p-1.5 rounded hover:bg-debugger-border text-debugger-muted hover:text-debugger-accent transition-colors flex items-center gap-1"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
+        title="Fork this template on GitHub"
       >
-        <Settings size={14} />
-      </motion.button>
+        <GitFork size={14} />
+        <span className="hidden xl:inline text-xs font-mono">FORK</span>
+      </motion.a>
     </motion.div>
   );
 };
